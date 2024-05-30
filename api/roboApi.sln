@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "roboApi.DB", "roboApi.DB\roboApi.DB.csproj", "{54680109-4666-4D14-BC58-FEB62D615771}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "roboApi.RestAPI", "roboApi.RestAPI\roboApi.RestAPI.csproj", "{CEA55A35-2F2B-4053-8150-0E30925D42E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "roboApi.Core", "roboApi.Core\roboApi.Core.csproj", "{74D240DE-9AF9-4536-93B6-2112A7BB268D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "roboApi.Test", "roboApi.Test\roboApi.Test.csproj", "{453CD59A-9C02-4D6B-A686-9C8CAFCC3663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54680109-4666-4D14-BC58-FEB62D615771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54680109-4666-4D14-BC58-FEB62D615771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54680109-4666-4D14-BC58-FEB62D615771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54680109-4666-4D14-BC58-FEB62D615771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA55A35-2F2B-4053-8150-0E30925D42E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA55A35-2F2B-4053-8150-0E30925D42E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA55A35-2F2B-4053-8150-0E30925D42E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA55A35-2F2B-4053-8150-0E30925D42E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D240DE-9AF9-4536-93B6-2112A7BB268D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D240DE-9AF9-4536-93B6-2112A7BB268D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D240DE-9AF9-4536-93B6-2112A7BB268D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D240DE-9AF9-4536-93B6-2112A7BB268D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453CD59A-9C02-4D6B-A686-9C8CAFCC3663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453CD59A-9C02-4D6B-A686-9C8CAFCC3663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453CD59A-9C02-4D6B-A686-9C8CAFCC3663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453CD59A-9C02-4D6B-A686-9C8CAFCC3663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
