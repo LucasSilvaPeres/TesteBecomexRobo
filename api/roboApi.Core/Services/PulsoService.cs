@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using roboApi.DB;
 using roboApi.DB.Entities;
 using roboApi.DB.Status;
@@ -14,9 +15,9 @@ public class PulsoService
     }
     public async Task RotacaoPulsoDireitoPositivo()
     {
-        Robo robo = _context.Robos.First();
+        Robo robo = await _context.Robos.SingleAsync();
 
-        VerificarRotacaoPulso(robo.Direito);
+        VerificarRotacaoPulso(robo.Direito.Cotovelo);
         robo.Direito.Pulso = RotacionarPulsoPositivo(robo.Direito.Pulso);
 
         
@@ -25,18 +26,18 @@ public class PulsoService
     }
     public async Task RotacaoPulsoDireitoNegativo()
     {
-        Robo robo = _context.Robos.First();
+        Robo robo = await _context.Robos.SingleAsync();
 
-        VerificarRotacaoPulso(robo.Direito);
+        VerificarRotacaoPulso(robo.Direito.Cotovelo);
         robo.Direito.Pulso = RotacionarPulsoNegativo(robo.Direito.Pulso);
 
         await _context.SaveChangesAsync();
     }
     public async Task RotacaoPulsoEsquerdoPositivo()
     {
-        Robo robo = _context.Robos.First();
+        Robo robo = await _context.Robos.SingleAsync();
 
-        VerificarRotacaoPulso(robo.Esquerdo);
+        VerificarRotacaoPulso(robo.Esquerdo.Cotovelo);
         robo.Esquerdo.Pulso = RotacionarPulsoPositivo(robo.Esquerdo.Pulso);
 
             
@@ -44,20 +45,20 @@ public class PulsoService
     }
     public async Task RotacaoPulsoEsquerdoNegativo()
     {
-        Robo robo = _context.Robos.First();
+        Robo robo = await _context.Robos.SingleAsync();
         
-        VerificarRotacaoPulso(robo.Esquerdo);
+        VerificarRotacaoPulso(robo.Esquerdo.Cotovelo);
         robo.Esquerdo.Pulso = RotacionarPulsoNegativo(robo.Esquerdo.Pulso);
         
         await _context.SaveChangesAsync();
     }
 
-    private void VerificarRotacaoPulso(Braco braco){
-        if (braco.Cotovelo != BracoCotovelo.FortementeContraido)
+    public void VerificarRotacaoPulso(BracoCotovelo cotovelo){
+        if (cotovelo != BracoCotovelo.FortementeContraido)
             throw new Exception("Cotovelo precisa estar Fortemente Contraido para rotacionar Pulso");
     }
 
-    private BracoPulso RotacionarPulsoNegativo(BracoPulso statusPulso){
+    public BracoPulso RotacionarPulsoNegativo(BracoPulso statusPulso){
         switch (statusPulso)
         {
             case BracoPulso.Negativo90:
@@ -85,7 +86,7 @@ public class PulsoService
                 throw new Exception("Não foi possível rotacionar pulso.");
         }
     }
-    private BracoPulso RotacionarPulsoPositivo(BracoPulso statusPulso){
+    public BracoPulso RotacionarPulsoPositivo(BracoPulso statusPulso){
         switch (statusPulso)
         {
             case BracoPulso.Negativo90:

@@ -37,7 +37,7 @@ public class RoboService
             Direito = bracoD,
             Esquerdo = bracoE,
         };
-        await _context.AddAsync(robo);
+        await _context.Robos.AddAsync(robo);
 
         await _context.SaveChangesAsync();
 

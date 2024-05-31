@@ -46,7 +46,7 @@ public class CotoveloService
         await _context.SaveChangesAsync();
     }
 
-    private BracoCotovelo ContrairCotovelo(BracoCotovelo statusCotovelo){
+    public BracoCotovelo ContrairCotovelo(BracoCotovelo statusCotovelo){
         
         switch (statusCotovelo)
         {
@@ -66,7 +66,7 @@ public class CotoveloService
         }
     }
 
-    private BracoCotovelo DescontrairCotovelo(BracoCotovelo statusCotovelo)
+    public BracoCotovelo DescontrairCotovelo(BracoCotovelo statusCotovelo)
     {
         switch (statusCotovelo)
         {

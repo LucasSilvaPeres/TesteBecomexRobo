@@ -33,7 +33,7 @@ public class CabecaService
     {
         Robo robo = _context.Robos.First();
 
-        VerificarInclinacaoCabeca(robo);
+        VerificarInclinacaoCabeca(robo.Cabeca.Inclinacao);
         robo.Cabeca.Rotacao = RotacionarCabecaPositivo(robo.Cabeca.Rotacao);
 
         await _context.SaveChangesAsync();
@@ -42,19 +42,19 @@ public class CabecaService
     {
         Robo robo = _context.Robos.First();
 
-        VerificarInclinacaoCabeca(robo);
+        VerificarInclinacaoCabeca(robo.Cabeca.Inclinacao);
         robo.Cabeca.Rotacao = RotacionarCabecaNegativo(robo.Cabeca.Rotacao);
 
         await _context.SaveChangesAsync();
     }
 
-    private void VerificarInclinacaoCabeca(Robo robo){
-        if(robo.Cabeca.Inclinacao == CabecaInclinacao.Baixo)
+    public void VerificarInclinacaoCabeca(CabecaInclinacao status){
+        if(status == CabecaInclinacao.Baixo)
             throw new Exception("Cabeca não pode estar inclinada para baixo ao rotacionar.");
 
     }
 
-    private CabecaInclinacao InclinarCabecaCima(CabecaInclinacao statusInclinacao){
+    public CabecaInclinacao InclinarCabecaCima(CabecaInclinacao statusInclinacao){
         switch (statusInclinacao)
         {
             case CabecaInclinacao.Cima:
@@ -70,7 +70,7 @@ public class CabecaService
                 throw new Exception("Não foi possível inclinar cabeça.");
         }
     }
-    private CabecaInclinacao InclinarCabecaBaixo(CabecaInclinacao statusInclinacao){
+    public CabecaInclinacao InclinarCabecaBaixo(CabecaInclinacao statusInclinacao){
         switch (statusInclinacao)
         {
             case CabecaInclinacao.Cima:
@@ -87,7 +87,7 @@ public class CabecaService
         }
     }
 
-    private CabecaRotacao RotacionarCabecaPositivo(CabecaRotacao statusRotacao){
+    public CabecaRotacao RotacionarCabecaPositivo(CabecaRotacao statusRotacao){
         switch (statusRotacao){
             case CabecaRotacao.Negativo90:
                 return CabecaRotacao.Negativo45;
@@ -109,7 +109,7 @@ public class CabecaService
 
         }
     }
-    private CabecaRotacao RotacionarCabecaNegativo(CabecaRotacao statusRotacao){
+    public CabecaRotacao RotacionarCabecaNegativo(CabecaRotacao statusRotacao){
         switch (statusRotacao){
             case CabecaRotacao.Negativo90:
                 throw new Exception("Não pode rotacionar mais.");
