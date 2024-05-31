@@ -8,7 +8,7 @@ using roboApi.Core.Services;
 namespace roboApi.RestAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/Robo/[controller]/[action]")]
     public class CabecaController : ControllerBase
     {
         private readonly CabecaService _cabecaService;

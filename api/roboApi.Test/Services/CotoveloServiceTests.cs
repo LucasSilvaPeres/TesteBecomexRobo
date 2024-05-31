@@ -14,9 +14,9 @@ public class CotoveloServiceTests
   }
 
   [Theory]
-  [InlineData(BracoCotovelo.Repouso, BracoCotovelo.LevementeContraido)]
-  [InlineData(BracoCotovelo.LevementeContraido, BracoCotovelo.Contraido)]
-  [InlineData(BracoCotovelo.Contraido, BracoCotovelo.FortementeContraido)]
+  [InlineData(BracoCotovelo.Repouso, BracoCotovelo.Levemente_Contraido)]
+  [InlineData(BracoCotovelo.Levemente_Contraido, BracoCotovelo.Contraido)]
+  [InlineData(BracoCotovelo.Contraido, BracoCotovelo.Fortemente_Contraido)]
   public void ContrairCotovelo_DeveRetornarStatusEsperado(BracoCotovelo entrada, BracoCotovelo esperado)
   {
 
@@ -27,9 +27,9 @@ public class CotoveloServiceTests
   }
 
   [Theory]
-  [InlineData(BracoCotovelo.LevementeContraido, BracoCotovelo.Repouso)]
-  [InlineData(BracoCotovelo.Contraido, BracoCotovelo.LevementeContraido)]
-  [InlineData(BracoCotovelo.FortementeContraido, BracoCotovelo.Contraido)]
+  [InlineData(BracoCotovelo.Levemente_Contraido, BracoCotovelo.Repouso)]
+  [InlineData(BracoCotovelo.Contraido, BracoCotovelo.Levemente_Contraido)]
+  [InlineData(BracoCotovelo.Fortemente_Contraido, BracoCotovelo.Contraido)]
   public void DescontrairCotovelo_DeveRetornarStatusEsperado(BracoCotovelo entrada, BracoCotovelo esperado)
   {
 
@@ -44,7 +44,7 @@ public class CotoveloServiceTests
   public void ContrairCotovelo_DeveLancarExcecaoQuandoCotoveloJaEstaFortementeContraido()
   {
 
-    Assert.Throws<Exception>(() => service.ContrairCotovelo(BracoCotovelo.FortementeContraido));
+    Assert.Throws<Exception>(() => service.ContrairCotovelo(BracoCotovelo.Fortemente_Contraido));
 
   }
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>R.O.B.O</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>RoboAPI - BECOMEX</h1>
+    <header>
+        <div id="cabeca">
+            <b>Cabeça</b>
+            <div class="cabeca-square cabeca-head">
+                <div class="cabeca-square cabeca-eyes"></div>
+                <div class="cabeca-square cabeca-eyes"></div>
+            </div>
+            <span>
+                Estado Inclinação:
+                <span id="inclinacao-status">Repouso</span>
+            </span>
+            <span>
+                Estado rotação:
+                <span id="rotacao-status">Repouso</span>
+            </span>
+                <div class="cabeca-buttons">
+                    <button id="cabeca-inclinacao-btn-cima" onclick='CabecaSetup("inclinacao", "cima")'>Inclinar para cima</button>
+                    <button id="cabeca-inclinacao-btn-baixo" onclick='CabecaSetup("inclinacao", "baixo")'>Inclinar para baixo</button>
+                </div>
+                <div class="cabeca-buttons">
+                    <button id="cabeca-rotacao-btn-positivo" onclick='CabecaSetup("rotacao", "positivo")'>Rotacionar Positivo</button>
+                    <button id="cabeca-rotacao-btn-negativo" onclick='CabecaSetup("rotacao", "negativo")'>Rotacionar Negativo</button>
+                </div>
+        </div>
+    </header>
+    <main>
+        <div class="braco" id="esquerdo">
+                <b>Braço Esquerdo</b>
+            <div class="cotovelo">
+                    <b>Cotovelo</b>
+                <span>Estado:
+                </span>
+                <span id="cotovelo-esquerdo-status">Repouso</span>
+                <button id="cotovelo-esquerdo-btn-contrair" onclick='CotoveloSetup("esquerdo", "contrair")'>Contrair</button>
+                <button id="cotovelo-esquerdo-btn-descontrair" onclick='CotoveloSetup("esquerdo", "descontrair")'>Descontrair</button>
+            </div>
+            <div class="pulso">
+                    <b>Pulso</b>
+                <span>Estado:
+                </span>
+                <span id="pulso-esquerdo-status">Repouso</span>
+                <button id="pulso-esquerdo-btn-positivo" onclick='PulsoSetup("esquerdo", "positivo")'>Rotacionar positivo</button>
+                <button id="pulso-esquerdo-btn-negativo" onclick='PulsoSetup("esquerdo", "negativo")'>Rotacionar negativo</button>
+            </div>
+        </div>
+        <div class="braco" id="direito">
+                <b>Braço Direito</b>
+            <div class="cotovelo">
+                    <b>Cotovelo</b>
+                <span>Estado:
+                </span>
+                    <span id="cotovelo-direito-status">Repouso</span>
+                <button id="cotovelo-direito-btn-contrair" onclick='CotoveloSetup("direito", "contrair")'>Contrair</button>
+                <button id="cotovelo-direito-btn-descontrair" onclick='CotoveloSetup("direito", "descontrair")'>Descontrair</button>
+            </div>
+            <div class="pulso">
+                    <b>Pulso</b>
+                <span>Estado:
+                </span>
+                    <span id="pulso-direito-status">Repouso</span>
+                <button id="pulso-direito-btn-positivo" onclick='PulsoSetup("direito", "positivo")'>Rotacionar positivo</button>
+                <button id="pulso-direito-btn-negativo" onclick='PulsoSetup("direito", "negativo")'>Rotacionar negativo</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -89,19 +89,19 @@ public class CabecaService
 
     public CabecaRotacao RotacionarCabecaPositivo(CabecaRotacao statusRotacao){
         switch (statusRotacao){
-            case CabecaRotacao.Negativo90:
-                return CabecaRotacao.Negativo45;
+            case CabecaRotacao.Negativo_90:
+                return CabecaRotacao.Negativo_45;
 
-            case CabecaRotacao.Negativo45:
+            case CabecaRotacao.Negativo_45:
                 return CabecaRotacao.Repouso;
 
             case CabecaRotacao.Repouso:
-                return CabecaRotacao.Positivo45;
+                return CabecaRotacao.Positivo_45;
 
-            case CabecaRotacao.Positivo45:
-                return CabecaRotacao.Positivo90;
+            case CabecaRotacao.Positivo_45:
+                return CabecaRotacao.Positivo_90;
 
-            case CabecaRotacao.Positivo90:
+            case CabecaRotacao.Positivo_90:
                 throw new Exception("Não pode rotacionar mais.");
 
             default:
@@ -111,20 +111,20 @@ public class CabecaService
     }
     public CabecaRotacao RotacionarCabecaNegativo(CabecaRotacao statusRotacao){
         switch (statusRotacao){
-            case CabecaRotacao.Negativo90:
+            case CabecaRotacao.Negativo_90:
                 throw new Exception("Não pode rotacionar mais.");
 
-            case CabecaRotacao.Negativo45:
-                return CabecaRotacao.Negativo90;
+            case CabecaRotacao.Negativo_45:
+                return CabecaRotacao.Negativo_90;
 
             case CabecaRotacao.Repouso:
-                return CabecaRotacao.Negativo45;
+                return CabecaRotacao.Negativo_45;
 
-            case CabecaRotacao.Positivo45:
+            case CabecaRotacao.Positivo_45:
                 return CabecaRotacao.Repouso;
 
-            case CabecaRotacao.Positivo90:
-                return CabecaRotacao.Positivo45;
+            case CabecaRotacao.Positivo_90:
+                return CabecaRotacao.Positivo_45;
 
             default:
                 throw new Exception("Não foi possível rotacionar cabeça.");

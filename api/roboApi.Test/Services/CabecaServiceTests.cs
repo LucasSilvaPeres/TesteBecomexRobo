@@ -47,10 +47,10 @@ public class CabecaServiceTests
     }
 
     [Theory]
-    [InlineData(CabecaRotacao.Negativo90, CabecaRotacao.Negativo45)]
-    [InlineData(CabecaRotacao.Negativo45, CabecaRotacao.Repouso)]
-    [InlineData(CabecaRotacao.Repouso, CabecaRotacao.Positivo45)]
-    [InlineData(CabecaRotacao.Positivo45, CabecaRotacao.Positivo90)]
+    [InlineData(CabecaRotacao.Negativo_90, CabecaRotacao.Negativo_45)]
+    [InlineData(CabecaRotacao.Negativo_45, CabecaRotacao.Repouso)]
+    [InlineData(CabecaRotacao.Repouso, CabecaRotacao.Positivo_45)]
+    [InlineData(CabecaRotacao.Positivo_45, CabecaRotacao.Positivo_90)]
     public void RotacionarCabecaPositivo_DeveAtualizarEstadoRotacaoCabecaPositivamente(CabecaRotacao entrada, CabecaRotacao esperado){
         var resultado = _cabecaService.RotacionarCabecaPositivo(entrada);
 
@@ -58,10 +58,10 @@ public class CabecaServiceTests
     }
 
     [Theory]
-    [InlineData(CabecaRotacao.Positivo90, CabecaRotacao.Positivo45)]
-    [InlineData(CabecaRotacao.Positivo45, CabecaRotacao.Repouso)]
-    [InlineData(CabecaRotacao.Repouso, CabecaRotacao.Negativo45)]
-    [InlineData(CabecaRotacao.Negativo45, CabecaRotacao.Negativo90)]
+    [InlineData(CabecaRotacao.Positivo_90, CabecaRotacao.Positivo_45)]
+    [InlineData(CabecaRotacao.Positivo_45, CabecaRotacao.Repouso)]
+    [InlineData(CabecaRotacao.Repouso, CabecaRotacao.Negativo_45)]
+    [InlineData(CabecaRotacao.Negativo_45, CabecaRotacao.Negativo_90)]
     public void RotacionarCabecaNegativo_DeveAtualizarEstadoRotacaoCabecaNegativamente(CabecaRotacao entrada, CabecaRotacao esperado){
         var resultado = _cabecaService.RotacionarCabecaNegativo(entrada);
 
@@ -75,11 +75,11 @@ public class CabecaServiceTests
 
     [Fact]
     public void RotacionarCabecaNegativo_DeveRetornarExcessaoSeRotacaoCabecaEstiverNegativo90(){
-        Assert.Throws<Exception>(() => _cabecaService.RotacionarCabecaNegativo(CabecaRotacao.Negativo90));
+        Assert.Throws<Exception>(() => _cabecaService.RotacionarCabecaNegativo(CabecaRotacao.Negativo_90));
     }
 
     [Fact]
     public void RotacionarCabecaPositivo_DeveRetornarExcessaoSeRotacaoCabecaEstiverPositivo90(){
-        Assert.Throws<Exception>(() => _cabecaService.RotacionarCabecaPositivo(CabecaRotacao.Positivo90));
+        Assert.Throws<Exception>(() => _cabecaService.RotacionarCabecaPositivo(CabecaRotacao.Positivo_90));
     }
 }

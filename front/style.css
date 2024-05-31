@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Inder&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --border: solid .3rem lightgray;
+    --border-button: solid .2rem lightblue;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+b{
+    font-size: 20px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #04041B;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+main,
+header,
+#cabeca {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+main {
+    flex-flow: row nowrap;
+    gap: 35rem;
+}
+
+main div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cotovelo,
+.pulso,
+#cabeca {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    gap: .7rem;
+}
+
+.braco {
+    gap: 3rem;
+}
+
+button {
+    border-radius: .5rem;
+    background-color: lightgray;
+    border: var(--border-button);
+    min-height: 2rem;
+    width: 90%;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+#cabeca {
+    max-width: 20rem;
+}
+
+.cabeca-head {
+    margin-top: 1em;
+    border: var(--border);
+    border-radius: 10%;
+    width: 7rem;
+    height: 7rem;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.cabeca-eyes {
+    background-color: black;
+    width: 1em;
+    height: 1em;
+}
+
+.cabeca-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.cotovelo,
+.pulso {
+    border: var(--border);
+    border-radius: 10%;
+}
+
+.cotovelo::after {
+    content: "";
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    left: 180%;
+    border: var(--border);
+    border-width: 1rem;
+    border-bottom: unset;
+    border-left: unset;
+    transform: rotate(45deg);
+}
+
+#esquerdo .cotovelo::after {
+    transform: rotate(225deg);
+    left: unset;
+    right: 180%;
+}
+
+.pulso::after {
+    content: "";
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    border-radius: 50%;
+    right: 150%;
+    bottom: 90%;
+    background-color: lightgray;
+}
+
+#direito .pulso::after {
+    right: unset;
+    left: 150%;
+}
+
+
+
+

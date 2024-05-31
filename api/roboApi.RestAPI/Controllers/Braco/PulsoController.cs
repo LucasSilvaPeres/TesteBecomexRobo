@@ -8,7 +8,7 @@ using roboApi.Core.Services;
 namespace roboApi.RestAPI.Controllers.Braco;
 
 [ApiController]
-[Route("api/Braco/[controller]/[action]")]
+[Route("api/Robo/Braco/[controller]/[action]")]
 public class PulsoController : ControllerBase
 {
     private readonly PulsoService _pulsoService;

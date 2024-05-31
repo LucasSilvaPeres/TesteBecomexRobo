@@ -2,11 +2,11 @@ namespace roboApi.DB.Status;
 
 public enum BracoPulso
 {
-    Negativo90,
-    Negativo45,
+    Negativo_90,
+    Negativo_45,
     Repouso,
-    Positivo45,
-    Positivo90,
-    Positivo135,
-    Positivo180,
+    Positivo_45,
+    Positivo_90,
+    Positivo_135,
+    Positivo_180,
 }

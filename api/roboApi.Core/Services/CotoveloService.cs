@@ -51,15 +51,15 @@ public class CotoveloService
         switch (statusCotovelo)
         {
             case BracoCotovelo.Repouso:
-                return BracoCotovelo.LevementeContraido;
+                return BracoCotovelo.Levemente_Contraido;
                 
-            case BracoCotovelo.LevementeContraido:
+            case BracoCotovelo.Levemente_Contraido:
                 return BracoCotovelo.Contraido;
                 
             case BracoCotovelo.Contraido:
-                return BracoCotovelo.FortementeContraido;
+                return BracoCotovelo.Fortemente_Contraido;
                 
-            case BracoCotovelo.FortementeContraido:
+            case BracoCotovelo.Fortemente_Contraido:
                 throw new Exception("Cotovelo ja está fortemente contraido.");
             default:
                 throw new Exception("Não foi possível contrair cotovelo.");
@@ -73,13 +73,13 @@ public class CotoveloService
             case BracoCotovelo.Repouso:
                 throw new Exception("Cotovelo ja está relaxado.");
                 
-            case BracoCotovelo.LevementeContraido:
+            case BracoCotovelo.Levemente_Contraido:
                 return BracoCotovelo.Repouso;
                 
             case BracoCotovelo.Contraido:
-                return BracoCotovelo.LevementeContraido;
+                return BracoCotovelo.Levemente_Contraido;
                 
-            case BracoCotovelo.FortementeContraido:
+            case BracoCotovelo.Fortemente_Contraido:
                 return BracoCotovelo.Contraido;
 
             default:

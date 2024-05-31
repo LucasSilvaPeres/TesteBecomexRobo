@@ -2,9 +2,9 @@ namespace roboApi.DB.Status;
 
 public enum CabecaRotacao
 {
-    Negativo90,
-    Negativo45,
+    Negativo_90,
+    Negativo_45,
     Repouso,
-    Positivo45,
-    Positivo90
+    Positivo_45,
+    Positivo_90
 }

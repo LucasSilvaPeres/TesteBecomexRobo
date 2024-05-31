@@ -14,7 +14,7 @@ namespace roboApi.Test.Services
 
     [Theory]
     [InlineData(BracoCotovelo.Repouso)]
-    [InlineData(BracoCotovelo.LevementeContraido)]
+    [InlineData(BracoCotovelo.Levemente_Contraido)]
     [InlineData(BracoCotovelo.Contraido)]
     public void VerificarRotacaoPulso_DeveLancarExcecaoQuandoCotoveloNaoEstaFirmementeContraido(BracoCotovelo statusCotevelo)
     {
@@ -27,7 +27,7 @@ namespace roboApi.Test.Services
     public void RotacionarPulsoNegativo_DeveLancarExcecaoQuandoPulsoNaoPodeSerRotacionadoNegativo()
     {
 
-      Assert.Throws<Exception>(() => service.RotacionarPulsoNegativo(BracoPulso.Negativo90));
+      Assert.Throws<Exception>(() => service.RotacionarPulsoNegativo(BracoPulso.Negativo_90));
 
     }
 
@@ -35,17 +35,17 @@ namespace roboApi.Test.Services
     public void RotacionarPulsoNegativo_DeveLancarExcecaoQuandoPulsoNaoPodeSerRotacionadoPositivo()
     {
 
-      Assert.Throws<Exception>(() => service.RotacionarPulsoPositivo(BracoPulso.Positivo180));
+      Assert.Throws<Exception>(() => service.RotacionarPulsoPositivo(BracoPulso.Positivo_180));
 
     }
 
     [Theory]
-    [InlineData(BracoPulso.Negativo90, BracoPulso.Negativo45)]
-    [InlineData(BracoPulso.Negativo45, BracoPulso.Repouso)]
-    [InlineData(BracoPulso.Repouso, BracoPulso.Positivo45)]
-    [InlineData(BracoPulso.Positivo45, BracoPulso.Positivo90)]
-    [InlineData(BracoPulso.Positivo90, BracoPulso.Positivo135)]
-    [InlineData(BracoPulso.Positivo135, BracoPulso.Positivo180)]
+    [InlineData(BracoPulso.Negativo_90, BracoPulso.Negativo_45)]
+    [InlineData(BracoPulso.Negativo_45, BracoPulso.Repouso)]
+    [InlineData(BracoPulso.Repouso, BracoPulso.Positivo_45)]
+    [InlineData(BracoPulso.Positivo_45, BracoPulso.Positivo_90)]
+    [InlineData(BracoPulso.Positivo_90, BracoPulso.Positivo_135)]
+    [InlineData(BracoPulso.Positivo_135, BracoPulso.Positivo_180)]
     public void RotacionarPulsoPositivo_DeveRetornarStatusEsperado(BracoPulso entrada, BracoPulso esperado)
     {
 
@@ -56,12 +56,12 @@ namespace roboApi.Test.Services
     }
 
     [Theory]
-    [InlineData(BracoPulso.Positivo180, BracoPulso.Positivo135)]
-    [InlineData(BracoPulso.Positivo135, BracoPulso.Positivo90)]
-    [InlineData(BracoPulso.Positivo90, BracoPulso.Positivo45)]
-    [InlineData(BracoPulso.Positivo45, BracoPulso.Repouso)]
-    [InlineData(BracoPulso.Repouso, BracoPulso.Negativo45)]
-    [InlineData(BracoPulso.Negativo45, BracoPulso.Negativo90)]
+    [InlineData(BracoPulso.Positivo_180, BracoPulso.Positivo_135)]
+    [InlineData(BracoPulso.Positivo_135, BracoPulso.Positivo_90)]
+    [InlineData(BracoPulso.Positivo_90, BracoPulso.Positivo_45)]
+    [InlineData(BracoPulso.Positivo_45, BracoPulso.Repouso)]
+    [InlineData(BracoPulso.Repouso, BracoPulso.Negativo_45)]
+    [InlineData(BracoPulso.Negativo_45, BracoPulso.Negativo_90)]
 
     public void RotacionarPulsoNegatio_DeveRetornarStatusEsperado(BracoPulso entrada, BracoPulso esperado)
     {

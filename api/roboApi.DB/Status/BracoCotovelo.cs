@@ -1,9 +1,11 @@
-namespace roboApi.DB.Status;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
+namespace roboApi.DB.Status;
 public enum BracoCotovelo
 {
     Repouso,
-    LevementeContraido,
+    Levemente_Contraido,
     Contraido,
-    FortementeContraido
+    Fortemente_Contraido
 }
