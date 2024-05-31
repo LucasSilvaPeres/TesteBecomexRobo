@@ -16,8 +16,7 @@ public class RoboService
 
     public async Task Reiniciar()
     {
-        _context.RemoveRange(_context.Robos);
-
+        await _context.Database.EnsureDeletedAsync();
         Braco bracoD = new Braco(){
             Cotovelo = BracoCotovelo.Repouso,
             Pulso = BracoPulso.Repouso,
@@ -38,7 +37,7 @@ public class RoboService
             Direito = bracoD,
             Esquerdo = bracoE,
         };
-        _context.Add(robo);
+        await _context.AddAsync(robo);
 
         await _context.SaveChangesAsync();
 

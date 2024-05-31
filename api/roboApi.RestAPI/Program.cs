@@ -10,8 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<RoboDbContext>(options =>
-    options.UseInMemoryDatabase("RoboDB"));
+builder.Services.AddDbContext<RoboDbContext>();
 builder.Services.AddScoped<CotoveloService>();
 builder.Services.AddScoped<PulsoService>();
 builder.Services.AddScoped<CabecaService>();

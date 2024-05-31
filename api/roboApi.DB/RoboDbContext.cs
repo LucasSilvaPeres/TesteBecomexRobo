@@ -5,10 +5,11 @@ namespace roboApi.DB;
 
 public class RoboDbContext : DbContext
 {
-    public RoboDbContext(DbContextOptions options) : base(options)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        
+        optionsBuilder.UseInMemoryDatabase("RoboDB");
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder){
         modelBuilder.Entity<Robo>().Navigation(x => x.Direito).AutoInclude();
         modelBuilder.Entity<Robo>().Navigation(x => x.Esquerdo).AutoInclude();
