@@ -12,5 +12,5 @@ Repositório para subir R.O.B.O de acordo com avaliação de conhecimentos da Be
     - Http-server 14.1.1
 
 ## Como subir o projeto
-- Primeiro, suba a API dentro de src/api utilizando o comando: `dotnet run --project roboApi.RestAPI`
-- Para consultar a interface gráfica, dentro de src/webapp, rode: `npm install` e depois: `npm run start`
+- Primeiro, suba a API dentro de /api utilizando o comando: `dotnet run --project roboApi.RestAPI`
+- Para consultar a interface gráfica, dentro de /front, rode: `npm install` e depois: `npm run start`
